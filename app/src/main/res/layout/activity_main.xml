@@ -1,25 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="开始主线程耗时操作" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_show_toast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="显示toast" />
+        <Button
+            android:id="@+id/btn_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加入频道" />
 
-    <ImageView
-        android:id="@+id/iv_test_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="离开频道" />
+
+        <Button
+            android:id="@+id/btn_animate_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="开始动画" />
+
+        <Button
+            android:id="@+id/btn_jump_to_second_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="跳转到SecondActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jump_to_third_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="跳转到ThirdActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jump_to_fired_lock_screen_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到FiredLockScreenActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jump_to_view_test_Activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到TestKeyEventCustomViewActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jump_to_coroutine_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="跳转到协程Activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jump_to_stack_test_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到栈测试Activity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jump_to_connectivity_test_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到ConnectivityTestActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_jump_to_html_text_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到html text activity" />
+
+        <Button
+            android:id="@+id/btn_jump_to_fragment_dialog_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到FragmentDialogActivity" />
+
+        <Button
+            android:id="@+id/btn_jump_to_rv_test_Activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到RvTestActivity" />
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,6 +1,5 @@
 plugins {
     id 'groovy'
-    id 'maven-publish'
 }
 
 dependencies {
@@ -13,18 +12,4 @@ dependencies {
 sourceCompatibility = "7"
 targetCompatibility = "7"
 
-//应用插件
-apply plugin: 'com.novoda.bintray-release'
-
-//上传配置
-publish {
-    userOrg = "huangwilliam33333"//组织，如果没有创建组织，就直接填写用户名。
-    groupId = 'com.william'//group
-    artifactId = 'customPlugin'//module
-    publishVersion = '1.0'//版本
-    desc = '自定义测试用的插件'//描述
-    website = 'htttp://www.baidu.com'//网站，随便填
-    bintrayUser = "huangwilliam33333"//用户名
-    bintrayKey = "xxx"//bintray秘钥
-    dryRun = false//如果这个是true，则只是运行，而不会上传，要配置成false
-}
+apply from : 'bintrayUpload.gradle'

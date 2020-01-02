@@ -2,6 +2,8 @@ package com.william.kotlinsimpletest
 
 import android.app.Application
 import android.content.Context
+import com.blankj.utilcode.util.LogUtils
+import com.blankj.utilcode.util.Utils
 import com.github.moduth.blockcanary.BlockCanary
 import com.github.moduth.blockcanary.BlockCanaryContext
 import com.github.moduth.blockcanary.internal.BlockInfo
@@ -18,6 +20,10 @@ class App : Application() {
         super.onCreate()
 
         BlockCanary.install(this, AppBlockCanaryContext()).start()
+        Utils.init(this)
+        LogUtils.getConfig().apply {
+            setBorderSwitch(false)
+        }
     }
 
     inner class AppBlockCanaryContext : BlockCanaryContext() {

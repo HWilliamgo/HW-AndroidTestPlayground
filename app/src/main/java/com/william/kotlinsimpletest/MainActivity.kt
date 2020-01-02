@@ -1,16 +1,19 @@
 package com.william.kotlinsimpletest
 
-import android.Manifest
+import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
-import com.bumptech.glide.Glide
-import com.william.kotlinsimpletest.permission.OnPermissionCallback
-import com.william.kotlinsimpletest.permission.PermissionManager
+import androidx.appcompat.app.AppCompatActivity
+import com.william.kotlinsimpletest.braodcast.ConnectivityTestActivity
+import com.william.kotlinsimpletest.htmlTextView.HtmlTextViewActivity
+import com.william.kotlinsimpletest.kotlin_corountine.CoroutinesActivity
+import com.william.kotlinsimpletest.lockScreen.FiredLockScreenActivity
+import com.william.kotlinsimpletest.rv_test.RvTestActivity
+import com.william.kotlinsimpletest.stack_test.StackTestActivity
+import com.william.kotlinsimpletest.viewTest.ViewTestActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
+
     companion object {
         const val TAG = "MainActivity"
     }
@@ -19,39 +22,41 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val permissionList = arrayListOf(
-            Manifest.permission.READ_PHONE_STATE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
-        )
-        PermissionManager.getInstance()
-            .start(this,permissionList,object :OnPermissionCallback{
-                override fun onAllGranted() {
-                }
+        btn_jump_to_second_activity.setOnClickListener {
+            Intent(this, SecondActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+        btn_jump_to_third_activity.setOnClickListener {
+            Intent(this@MainActivity, ThirdActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+        btn_jump_to_fired_lock_screen_activity.setOnClickListener {
+            startActivity(Intent(this, FiredLockScreenActivity::class.java))
+        }
+        btn_jump_to_view_test_Activity.setOnClickListener {
+            startActivity(Intent(this, ViewTestActivity::class.java))
+        }
+        btn_jump_to_coroutine_activity.setOnClickListener {
+            startActivity(Intent(this, CoroutinesActivity::class.java))
+        }
+        btn_jump_to_stack_test_activity.setOnClickListener {
+            startActivity(Intent(this, StackTestActivity::class.java))
+        }
+        btn_jump_to_connectivity_test_activity.setOnClickListener {
+            startActivity(Intent(this, ConnectivityTestActivity::class.java))
+        }
+        btn_jump_to_html_text_activity.setOnClickListener {
+            startActivity(Intent(this, HtmlTextViewActivity::class.java))
+        }
+        btn_jump_to_fragment_dialog_activity.setOnClickListener {
 
-                override fun onGranted(grantedPermissions: ArrayList<String>?) {
-                }
-
-                override fun onDenied(deniedPermissions: ArrayList<String>?) {
-                }
-
-                override fun onDeniedForever(deniedForeverP: ArrayList<String>?) {
-
-                }
-            })
-
-
-        btn_start.setOnClickListener {
-            Thread.sleep(10 * 1000)
         }
 
-        btn_show_toast.setOnClickListener {
-            Toast.makeText(this, "你好", Toast.LENGTH_SHORT).show()
+        btn_jump_to_rv_test_Activity.setOnClickListener {
+            startActivity(Intent(this,RvTestActivity::class.java))
         }
-
-        Glide.with(this)
-            .load("http://n.sinaimg.cn/sinacn/w640h550/20180121/1c69-fyqtwzv3303697.jpg")
-            .into(iv_test_image)
     }
-
 
 }
