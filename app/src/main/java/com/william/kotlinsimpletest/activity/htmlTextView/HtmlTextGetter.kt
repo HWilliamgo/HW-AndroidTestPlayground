@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.htmlTextView
+package com.william.kotlinsimpletest.activity.htmlTextView
 
 import android.text.Html
 import com.blankj.utilcode.util.Utils

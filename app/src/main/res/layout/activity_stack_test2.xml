@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".stack_test.StackTest2Activity">
+    tools:context=".activity.stack_test.StackTest2Activity">
 
     <TextView
         android:textColor="@color/colorPrimary"

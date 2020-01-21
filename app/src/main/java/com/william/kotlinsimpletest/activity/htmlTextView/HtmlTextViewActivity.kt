@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.htmlTextView
+package com.william.kotlinsimpletest.activity.htmlTextView
 
 import android.os.Bundle
 import android.widget.LinearLayout

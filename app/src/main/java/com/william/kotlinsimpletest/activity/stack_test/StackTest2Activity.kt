@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.stack_test
+package com.william.kotlinsimpletest.activity.stack_test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

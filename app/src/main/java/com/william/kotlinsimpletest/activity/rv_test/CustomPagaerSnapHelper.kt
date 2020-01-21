@@ -1,8 +1,7 @@
-package com.william.kotlinsimpletest.rv_test
+package com.william.kotlinsimpletest.activity.rv_test
 
 import android.view.View
 import androidx.recyclerview.widget.LinearSnapHelper
-import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.LogUtils
 

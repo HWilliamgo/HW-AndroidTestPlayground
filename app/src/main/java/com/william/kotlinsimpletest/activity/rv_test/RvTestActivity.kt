@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.rv_test
+package com.william.kotlinsimpletest.activity.rv_test
 
 import android.os.Bundle
 import android.view.animation.Animation

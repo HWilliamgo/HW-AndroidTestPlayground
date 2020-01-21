@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.braodcast
+package com.william.kotlinsimpletest.activity.braodcast
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -9,7 +9,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.LogUtils
 import com.william.kotlinsimpletest.R
-import kotlinx.android.synthetic.main.activity_coroutine.*
 
 class ConnectivityTestActivity : AppCompatActivity() {
     private lateinit var receiver: BroadcastReceiver

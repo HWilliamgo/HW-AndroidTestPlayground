@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.rv_test
+package com.william.kotlinsimpletest.activity.rv_test
 
 import android.view.LayoutInflater
 import android.view.View

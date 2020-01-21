@@ -21,17 +21,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".rv_test.RvTestActivity"></activity>
-        <activity android:name=".fragment_dialog.FragmentDialogActivity" />
-        <activity android:name=".htmlTextView.HtmlTextViewActivity" />
-        <activity android:name=".braodcast.ConnectivityTestActivity" />
+        <activity android:name="com.william.kotlinsimpletest.activity.rv_test.RvTestActivity"></activity>
+        <activity android:name="com.william.kotlinsimpletest.activity.fragment_dialog.FragmentDialogActivity" />
+        <activity android:name="com.william.kotlinsimpletest.activity.htmlTextView.HtmlTextViewActivity" />
+        <activity android:name="com.william.kotlinsimpletest.activity.braodcast.ConnectivityTestActivity" />
         <activity
-            android:name=".stack_test.StackTest2Activity"
+            android:name="com.william.kotlinsimpletest.activity.stack_test.StackTest2Activity"
             android:launchMode="singleInstance"
             android:taskAffinity="com.willia.qwe" />
-        <activity android:name=".stack_test.StackTestActivity" />
-        <activity android:name=".kotlin_corountine.CoroutinesActivity" />
-        <activity android:name=".viewTest.ViewTestActivity" />
+        <activity android:name="com.william.kotlinsimpletest.activity.stack_test.StackTestActivity" />
+        <activity android:name="com.william.kotlinsimpletest.activity.kotlin_corountine.CoroutinesActivity" />
+        <activity android:name="com.william.kotlinsimpletest.activity.viewTest.ViewTestActivity" />
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
@@ -46,12 +46,12 @@
             android:name=".MusicService"
             android:exported="true" />
 
-        <activity android:name=".lockScreen.FiredLockScreenActivity" />
+        <activity android:name="com.william.kotlinsimpletest.activity.lockScreen.FiredLockScreenActivity" />
         <activity
-            android:name=".lockScreen.LockScreenActivity"
+            android:name="com.william.kotlinsimpletest.activity.lockScreen.LockScreenActivity"
             android:launchMode="singleInstance" />
 
-        <service android:name=".lockScreen.LockScreenService" />
+        <service android:name="com.william.kotlinsimpletest.activity.lockScreen.LockScreenService" />
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
-package com.william.kotlinsimpletest.kotlin_corountine
+package com.william.kotlinsimpletest.activity.kotlin_corountine
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.blankj.utilcode.util.LogUtils
 import com.william.kotlinsimpletest.R
+import io.reactivex.Observable
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,8 +30,9 @@ class CoroutinesActivity : AppCompatActivity() {
             }
             val bitmap2 = clippingBitmap(bitmap)
             val bitmap3 = clippingBitmapTo9(bitmap)
-            
+
         }
+        testFlatMap()
     }
 
     private fun getBitmap(): Bitmap {
@@ -52,4 +55,16 @@ class CoroutinesActivity : AppCompatActivity() {
             bitmap
         }
     }
+
+    private fun testFlatMap() {
+        val disposable =
+            Observable.just(arrayListOf("a", "c", "d"))
+                .flatMap {
+                    Observable.fromIterable(it)
+                }
+                .subscribe {
+                    LogUtils.d(it)
+                }
+    }
+
 }

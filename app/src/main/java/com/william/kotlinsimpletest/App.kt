@@ -22,7 +22,7 @@ class App : Application() {
         BlockCanary.install(this, AppBlockCanaryContext()).start()
         Utils.init(this)
         LogUtils.getConfig().apply {
-            setBorderSwitch(false)
+
         }
     }
 

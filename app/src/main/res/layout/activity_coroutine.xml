@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".kotlin_corountine.CoroutinesActivity">
+    tools:context=".activity.kotlin_corountine.CoroutinesActivity">
 
     <ImageView
         android:id="@+id/iv_coroutine_dog"

@@ -3,13 +3,13 @@ package com.william.kotlinsimpletest
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.william.kotlinsimpletest.braodcast.ConnectivityTestActivity
-import com.william.kotlinsimpletest.htmlTextView.HtmlTextViewActivity
-import com.william.kotlinsimpletest.kotlin_corountine.CoroutinesActivity
-import com.william.kotlinsimpletest.lockScreen.FiredLockScreenActivity
-import com.william.kotlinsimpletest.rv_test.RvTestActivity
-import com.william.kotlinsimpletest.stack_test.StackTestActivity
-import com.william.kotlinsimpletest.viewTest.ViewTestActivity
+import com.william.kotlinsimpletest.activity.braodcast.ConnectivityTestActivity
+import com.william.kotlinsimpletest.activity.htmlTextView.HtmlTextViewActivity
+import com.william.kotlinsimpletest.activity.kotlin_corountine.CoroutinesActivity
+import com.william.kotlinsimpletest.activity.lockScreen.FiredLockScreenActivity
+import com.william.kotlinsimpletest.activity.rv_test.RvTestActivity
+import com.william.kotlinsimpletest.activity.stack_test.StackTestActivity
+import com.william.kotlinsimpletest.activity.viewTest.ViewTestActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

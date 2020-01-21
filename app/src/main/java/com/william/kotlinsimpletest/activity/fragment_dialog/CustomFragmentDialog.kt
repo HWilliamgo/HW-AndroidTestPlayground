@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.fragment_dialog
+package com.william.kotlinsimpletest.activity.fragment_dialog
 
 import android.app.Dialog
 import android.os.Bundle

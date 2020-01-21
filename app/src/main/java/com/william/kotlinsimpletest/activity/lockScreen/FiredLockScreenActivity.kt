@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.lockScreen
+package com.william.kotlinsimpletest.activity.lockScreen
 
 import android.Manifest
 import android.content.Intent

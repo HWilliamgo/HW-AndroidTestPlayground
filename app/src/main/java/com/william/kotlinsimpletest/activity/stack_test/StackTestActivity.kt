@@ -1,4 +1,4 @@
-package com.william.kotlinsimpletest.stack_test
+package com.william.kotlinsimpletest.activity.stack_test
 
 import android.content.Intent
 import android.os.Bundle
