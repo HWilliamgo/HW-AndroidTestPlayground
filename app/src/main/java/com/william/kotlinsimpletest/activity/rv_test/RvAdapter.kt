@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.util.LogUtils
 import com.william.kotlinsimpletest.R
 
 /**
@@ -23,7 +24,13 @@ class RvAdapter : RecyclerView.Adapter<RvAdapter.VHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_rv, parent, false)
-        return VHolder(itemView)
+        val viewHolder = VHolder(itemView)
+        LogUtils.d("onCreateViewHolder")
+        return viewHolder
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return position
     }
 
     override fun getItemCount(): Int {
@@ -31,7 +38,7 @@ class RvAdapter : RecyclerView.Adapter<RvAdapter.VHolder>() {
     }
 
     override fun onBindViewHolder(holder: VHolder, position: Int) {
-        holder.tv.text=list[position].toString()
+        holder.tv.text = list[position].toString()
     }
 
     class VHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

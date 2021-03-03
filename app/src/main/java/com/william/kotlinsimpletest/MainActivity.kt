@@ -3,12 +3,18 @@ package com.william.kotlinsimpletest
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.blankj.utilcode.util.ToastUtils
 import com.william.kotlinsimpletest.activity.braodcast.ConnectivityTestActivity
+import com.william.kotlinsimpletest.activity.file.FileTestActivity
+import com.william.kotlinsimpletest.activity.fragment_dialog.FragmentDialogActivity
+import com.william.kotlinsimpletest.activity.glide.ImageLoadActivity
 import com.william.kotlinsimpletest.activity.htmlTextView.HtmlTextViewActivity
 import com.william.kotlinsimpletest.activity.kotlin_corountine.CoroutinesActivity
 import com.william.kotlinsimpletest.activity.lockScreen.FiredLockScreenActivity
 import com.william.kotlinsimpletest.activity.rv_test.RvTestActivity
+import com.william.kotlinsimpletest.activity.rxJava.RxJavaTestActivity
 import com.william.kotlinsimpletest.activity.stack_test.StackTestActivity
+import com.william.kotlinsimpletest.activity.videoview.VideoViewActivity
 import com.william.kotlinsimpletest.activity.viewTest.ViewTestActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -21,6 +27,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        btn_show_toast.setOnClickListener {
+            ToastUtils.showShort("你好")
+        }
 
         btn_jump_to_second_activity.setOnClickListener {
             Intent(this, SecondActivity::class.java).apply {
@@ -51,11 +60,30 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, HtmlTextViewActivity::class.java))
         }
         btn_jump_to_fragment_dialog_activity.setOnClickListener {
-
+            startActivity(Intent(this, FragmentDialogActivity::class.java))
         }
 
         btn_jump_to_rv_test_Activity.setOnClickListener {
-            startActivity(Intent(this,RvTestActivity::class.java))
+            startActivity(Intent(this, RvTestActivity::class.java))
+        }
+
+        btn_jump_to_rx_java_test.setOnClickListener {
+            startActivity(Intent(this, RxJavaTestActivity::class.java))
+        }
+        btn_jump_to_video_view.setOnClickListener {
+            startActivity(
+                Intent(this, VideoViewActivity::class.java)
+            )
+        }
+        btn_jump_to_image_load.setOnClickListener {
+            startActivity(
+                Intent(this, ImageLoadActivity::class.java)
+            )
+        }
+        btn_jump_to_file_test.setOnClickListener {
+            startActivity(
+                Intent(this, FileTestActivity::class.java)
+            )
         }
     }
 

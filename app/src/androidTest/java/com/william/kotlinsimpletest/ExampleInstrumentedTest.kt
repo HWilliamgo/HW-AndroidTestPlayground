@@ -1,12 +1,11 @@
 package com.william.kotlinsimpletest
 
-import androidx.test.platform.app.InstrumentationRegistry
-import androidx.test.ext.junit.runners.AndroidJUnit4
-
+import androidx.test.runner.AndroidJUnit4
+import com.william.kotlinsimpletest.chain.Task1
+import com.william.kotlinsimpletest.chain.Task2
+import com.william.kotlinsimpletest.chain.Task3
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -17,8 +16,12 @@ import org.junit.Assert.*
 class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
-        // Context of the app under test.
-        val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.william.kotlinsimpletest", appContext.packageName)
+        val task1 = Task1(false)
+        val task2 = Task2(false)
+        val task3 = Task3(true)
+        task1.addNext(task2)
+        task2.addNext(task3)
+
+        task1.action()
     }
 }

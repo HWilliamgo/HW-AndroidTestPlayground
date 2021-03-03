@@ -2,8 +2,13 @@ package com.william.kotlinsimpletest
 
 import android.app.Application
 import android.content.Context
+import android.os.Build
+import android.webkit.WebView
+import androidx.multidex.MultiDexApplication
+import com.blankj.utilcode.util.EncryptUtils
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.Utils
+import com.facebook.stetho.Stetho
 import com.github.moduth.blockcanary.BlockCanary
 import com.github.moduth.blockcanary.BlockCanaryContext
 import com.github.moduth.blockcanary.internal.BlockInfo
@@ -15,7 +20,11 @@ import java.util.*
  * @author hwj
  * description 描述一下方法的作用
  */
-class App : Application() {
+class App : MultiDexApplication() {
+    companion object {
+        const val PROCESS_NAME: String = BuildConfig.APPLICATION_ID
+    }
+
     override fun onCreate() {
         super.onCreate()
 
@@ -23,6 +32,17 @@ class App : Application() {
         Utils.init(this)
         LogUtils.getConfig().apply {
 
+        }
+        Stetho.initializeWithDefaults(this)
+        initWebView()
+    }
+
+    private fun initWebView() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            val processName = Application.getProcessName()
+            if (processName != PROCESS_NAME) {
+                WebView.setDataDirectorySuffix(processName)
+            }
         }
     }
 

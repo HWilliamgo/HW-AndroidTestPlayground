@@ -49,6 +49,30 @@ class TestKeyEventCustomView @JvmOverloads constructor(
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+
+//        //默认尺寸
+//        val defaultWidth = 50
+//        val defaultHeight = 100
+//        //取出父View给的测量模式
+//        val widthSpecMode = MeasureSpec.getMode(widthMeasureSpec)
+//        val heightSpecMode = MeasureSpec.getMode(heightMeasureSpec)
+//        //取出父View给的测量尺寸
+//        val widthSpecSize = MeasureSpec.getSize(widthMeasureSpec)
+//        val heightSpecSize = MeasureSpec.getSize(heightMeasureSpec)
+//        //最终测量尺寸
+//        val finalWidth = if (widthSpecMode == MeasureSpec.AT_MOST) defaultWidth else widthSpecSize
+//        val finalHeight = if (heightSpecMode == MeasureSpec.AT_MOST) defaultHeight else heightSpecSize
+        //set
+//        setMeasuredDimension(finalWidth,finalHeight)
+
+        //默认尺寸
+        val defaultWidth = 50
+        val defaultHeight = 100
+        //最终测量尺寸
+        val finalWidth = resolveSize(defaultWidth + paddingLeft + paddingRight, widthMeasureSpec)
+        val finalHeight = resolveSize(defaultHeight + paddingTop + paddingBottom, heightMeasureSpec)
+        //设置
+        setMeasuredDimension(finalWidth, finalHeight)
     }
 
     override fun onDraw(canvas: Canvas?) {

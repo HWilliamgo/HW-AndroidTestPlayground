@@ -13,7 +13,8 @@ import com.william.kotlinsimpletest.R
  */
 
 class ShadowLayerView @JvmOverloads constructor(
-    context: Context, attributeSet: AttributeSet? = null,
+    context: Context,
+    attributeSet: AttributeSet? = null,
     defStyle: Int = 0
 ) : View(context, attributeSet, defStyle) {
     private val paint = Paint()

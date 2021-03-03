@@ -17,21 +17,29 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.william.kotlinsimpletest.activity.rv_test.RvTestActivity"></activity>
-        <activity android:name="com.william.kotlinsimpletest.activity.fragment_dialog.FragmentDialogActivity" />
-        <activity android:name="com.william.kotlinsimpletest.activity.htmlTextView.HtmlTextViewActivity" />
-        <activity android:name="com.william.kotlinsimpletest.activity.braodcast.ConnectivityTestActivity" />
+        <activity android:name=".activity.file.FileTestActivity"></activity>
+        <activity android:name=".activity.glide.ImageLoadActivity" />
+        <activity android:name=".activity.ChainModeActivity" />
+        <activity android:name=".activity.videoview.VideoViewActivity" />
+        <activity android:name=".activity.rv_test.RvTestActivity" />
+        <activity android:name=".activity.fragment_dialog.FragmentDialogActivity" />
+        <activity android:name=".activity.htmlTextView.HtmlTextViewActivity" />
+        <activity android:name=".activity.braodcast.ConnectivityTestActivity" />
         <activity
-            android:name="com.william.kotlinsimpletest.activity.stack_test.StackTest2Activity"
+            android:name=".activity.stack_test.StackTest2Activity"
             android:launchMode="singleInstance"
             android:taskAffinity="com.willia.qwe" />
-        <activity android:name="com.william.kotlinsimpletest.activity.stack_test.StackTestActivity" />
-        <activity android:name="com.william.kotlinsimpletest.activity.kotlin_corountine.CoroutinesActivity" />
-        <activity android:name="com.william.kotlinsimpletest.activity.viewTest.ViewTestActivity" />
+        <activity android:name=".activity.stack_test.StackTestActivity" />
+        <activity android:name=".activity.kotlin_corountine.CoroutinesActivity" />
+        <activity
+            android:name=".activity.viewTest.ViewTestActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".activity.rxJava.RxJavaTestActivity" />
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
@@ -46,12 +54,12 @@
             android:name=".MusicService"
             android:exported="true" />
 
-        <activity android:name="com.william.kotlinsimpletest.activity.lockScreen.FiredLockScreenActivity" />
+        <activity android:name=".activity.lockScreen.FiredLockScreenActivity" />
         <activity
-            android:name="com.william.kotlinsimpletest.activity.lockScreen.LockScreenActivity"
+            android:name=".activity.lockScreen.LockScreenActivity"
             android:launchMode="singleInstance" />
 
-        <service android:name="com.william.kotlinsimpletest.activity.lockScreen.LockScreenService" />
+        <service android:name=".activity.lockScreen.LockScreenService" />
     </application>
 
 </manifest>
