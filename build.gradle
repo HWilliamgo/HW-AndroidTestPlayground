@@ -8,9 +8,6 @@ buildscript {
 //        }
         google()
         jcenter()
-        maven{
-            url  "https://dl.bintray.com/huangwilliam33333/maven"
-        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
@@ -22,7 +19,7 @@ buildscript {
 
 
 //        classpath files('./gradle_plugin_libs/customPlugin-1.0.jar')
-        classpath('com.william:customPlugin:1.0')
+//        classpath('com.william:customPlugin:1.0')
     }
 }
 
@@ -37,7 +34,6 @@ allprojects {
         maven { url 'https://dl.bintray.com/polyv/android' }
 
     }
-    apply plugin: 'com.william.customplugin'
 }
 
 task clean(type: Delete) {

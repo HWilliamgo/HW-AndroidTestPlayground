@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ToastUtils
+import com.william.kotlinsimpletest.activity.ProgressBarActivity
 import com.william.kotlinsimpletest.activity.braodcast.ConnectivityTestActivity
 import com.william.kotlinsimpletest.activity.file.FileTestActivity
 import com.william.kotlinsimpletest.activity.fragment_dialog.FragmentDialogActivity
@@ -83,6 +84,11 @@ class MainActivity : AppCompatActivity() {
         btn_jump_to_file_test.setOnClickListener {
             startActivity(
                 Intent(this, FileTestActivity::class.java)
+            )
+        }
+        btn_jump_to_progress_bar.setOnClickListener {
+            startActivity(
+                Intent(this, ProgressBarActivity::class.java)
             )
         }
     }
