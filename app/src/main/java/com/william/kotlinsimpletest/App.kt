@@ -31,7 +31,7 @@ class App : MultiDexApplication() {
         BlockCanary.install(this, AppBlockCanaryContext()).start()
         Utils.init(this)
         LogUtils.getConfig().apply {
-
+            setBorderSwitch(false)
         }
         Stetho.initializeWithDefaults(this)
         initWebView()

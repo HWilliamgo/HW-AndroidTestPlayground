@@ -12,7 +12,12 @@ class RvTestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rv_test)
 
-        val rvAdapter = RvAdapter()
+        val dataList = ArrayList<String>()
+        for (i in 0..20) {
+            dataList.add("$i")
+        }
+        val rvAdapter = NoRecyclerRvAdapter(dataList,rv)
+        rv.itemAnimator=null
         rv.adapter = rvAdapter
         rv.layoutManager = LinearLayoutManager(this)
     }

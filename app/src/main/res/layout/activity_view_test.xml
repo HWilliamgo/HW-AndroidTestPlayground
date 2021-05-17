@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.viewTest.ViewTestActivity">
 
-    <com.william.kotlinsimpletest.activity.viewTest.MyFrameLayout
+    <FrameLayout
+        android:id="@+id/fl_top"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorAccent">
 
-        <View
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent" />
-    </com.william.kotlinsimpletest.activity.viewTest.MyFrameLayout>
+    </FrameLayout>
 
+    <FrameLayout
+        android:id="@+id/fl_bottom"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@color/select_color">
 
-</FrameLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_change_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change parent" />
+
+</LinearLayout>
