@@ -24,7 +24,7 @@ class ConnectivityTestActivity : AppCompatActivity() {
                         LogUtils.d("断开连接")
                         return@apply
                     }
-                    activeNetworkInfo.apply {
+                    activeNetworkInfo?.apply {
                         LogUtils.d("isConnected=$isConnected, isConnectedOrConnecting=$isConnectedOrConnecting")
                     }
                 }

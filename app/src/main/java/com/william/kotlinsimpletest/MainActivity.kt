@@ -10,6 +10,7 @@ import com.william.kotlinsimpletest.activity.file.FileTestActivity
 import com.william.kotlinsimpletest.activity.fragment_dialog.FragmentDialogActivity
 import com.william.kotlinsimpletest.activity.glide.ImageLoadActivity
 import com.william.kotlinsimpletest.activity.htmlTextView.HtmlTextViewActivity
+import com.william.kotlinsimpletest.activity.jniTest.JniTestActivity
 import com.william.kotlinsimpletest.activity.kotlin_corountine.CoroutinesActivity
 import com.william.kotlinsimpletest.activity.lockScreen.FiredLockScreenActivity
 import com.william.kotlinsimpletest.activity.rv_test.RvTestActivity
@@ -89,6 +90,11 @@ class MainActivity : AppCompatActivity() {
         btn_jump_to_progress_bar.setOnClickListener {
             startActivity(
                 Intent(this, ProgressBarActivity::class.java)
+            )
+        }
+        btn_jump_to_jniTest.setOnClickListener {
+            startActivity(
+                Intent(this, JniTestActivity::class.java)
             )
         }
     }
