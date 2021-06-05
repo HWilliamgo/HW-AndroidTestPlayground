@@ -3,7 +3,7 @@ package com.william.kotlinsimpletest.activity.jniTest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.hwilliam.jnilearncmake.NDKTools
+//import com.hwilliam.jnilearncmake.NDKTools
 import com.william.kotlinsimpletest.R
 import java.io.Reader
 
@@ -16,7 +16,7 @@ class JniTestActivity : AppCompatActivity() {
     fun onClick(view: View) {
         when (view.id) {
             R.id.btn_jni_test -> {
-                NDKTools.testHappyLib()
+//                NDKTools.testHappyLib()
             }
         }
     }

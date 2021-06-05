@@ -9,6 +9,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_https_sni.xml" value="0.2011144883485309" />
         <entry key="app/src/main/res/layout/activity_jni_test.xml" value="0.21875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22418478260869565" />
         <entry key="app/src/main/res/layout/activity_rv_test.xml" value="0.23777173913043478" />

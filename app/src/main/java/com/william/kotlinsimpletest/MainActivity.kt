@@ -2,6 +2,7 @@ package com.william.kotlinsimpletest
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ToastUtils
 import com.william.kotlinsimpletest.activity.ProgressBarActivity
@@ -10,6 +11,7 @@ import com.william.kotlinsimpletest.activity.file.FileTestActivity
 import com.william.kotlinsimpletest.activity.fragment_dialog.FragmentDialogActivity
 import com.william.kotlinsimpletest.activity.glide.ImageLoadActivity
 import com.william.kotlinsimpletest.activity.htmlTextView.HtmlTextViewActivity
+import com.william.kotlinsimpletest.activity.https_sni.HttpsSniActivity
 import com.william.kotlinsimpletest.activity.jniTest.JniTestActivity
 import com.william.kotlinsimpletest.activity.kotlin_corountine.CoroutinesActivity
 import com.william.kotlinsimpletest.activity.lockScreen.FiredLockScreenActivity
@@ -96,6 +98,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(
                 Intent(this, JniTestActivity::class.java)
             )
+        }
+    }
+
+    fun onClick(view: View) {
+        when (view.id) {
+            R.id.btn_jump_to_https_sni -> {
+                startActivity(Intent(this, HttpsSniActivity::class.java))
+            }
         }
     }
 
