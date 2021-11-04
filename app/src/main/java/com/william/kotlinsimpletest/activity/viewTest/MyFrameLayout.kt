@@ -3,6 +3,7 @@ package com.william.kotlinsimpletest.activity.viewTest
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
+import android.view.View
 import android.widget.FrameLayout
 import com.blankj.utilcode.util.LogUtils
 
@@ -19,7 +20,8 @@ class MyFrameLayout @JvmOverloads constructor(
     init {
         initView()
     }
-    private fun initView(){
+
+    private fun initView() {
 
     }
 
@@ -31,5 +33,16 @@ class MyFrameLayout @JvmOverloads constructor(
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         LogUtils.d(ev)
         return true
+    }
+
+    override fun onViewRemoved(child: View?) {
+        super.onViewRemoved(child)
+        Throwable().printStackTrace()
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        Throwable().printStackTrace()
+        LogUtils.d(parent)
     }
 }

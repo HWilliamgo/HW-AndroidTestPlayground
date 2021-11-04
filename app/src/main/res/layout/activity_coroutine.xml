@@ -27,5 +27,12 @@
         android:layout_margin="20dp"
         android:textSize="18sp" />
 
+    <Button
+        android:text="测试httpdns"
+        android:id="@+id/btn_coroutine_httpdns_test"
+        android:layout_width="wrap_content"
+        android:onClick="onClick"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

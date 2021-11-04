@@ -41,9 +41,6 @@ class HttpsSniActivity : AppCompatActivity() {
                         e.printStackTrace()
                         return@launch
                     }
-//                    tv_test_sni.text = result
-                    wb_test_sni.loadData(result, "text/html", "UTF-8")
-                    wb_test_sni.loadUrl("https://www.baidu.com")
                 }
             }
         }

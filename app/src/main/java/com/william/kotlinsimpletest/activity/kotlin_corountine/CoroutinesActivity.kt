@@ -2,17 +2,14 @@ package com.william.kotlinsimpletest.activity.kotlin_corountine
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.LogUtils
 import com.stealthcopter.networktools.Ping
 import com.stealthcopter.networktools.ping.PingResult
 import com.stealthcopter.networktools.ping.PingStats
 import com.william.kotlinsimpletest.R
-import com.william.kotlinsimpletest.net.APIManager
+import com.william.kotlinsimpletest.net.HttpDnsManager
 import kotlinx.coroutines.*
-import okhttp3.CacheControl
-import okhttp3.Request
-import java.lang.Exception
-import java.util.concurrent.TimeUnit
 
 class CoroutinesActivity : AppCompatActivity() {
 
@@ -52,27 +49,41 @@ class CoroutinesActivity : AppCompatActivity() {
 //                    LogUtils.d(it)
 //                }
 //            }
-//            networkResponse?.also {
+//            networkResponse?.also {z
 //                withContext(Dispatchers.IO) {
 //                    LogUtils.d(it)
 //                }
 //            }
 //        }
-        Ping.onAddress("oss-live-2.videocc.net").setTimes(0).setDelayMillis(1000).doPing(object :Ping.PingListener{
-            override fun onResult(pingResult: PingResult?) {
-                LogUtils.d(pingResult.toString())
-            }
+        Ping.onAddress("oss-live-2.videocc.net").setTimes(0).setDelayMillis(1000)
+            .doPing(object : Ping.PingListener {
+                override fun onResult(pingResult: PingResult?) {
+                    LogUtils.d(pingResult.toString())
+                }
 
-            override fun onFinished(pingStats: PingStats?) {
-            }
+                override fun onFinished(pingStats: PingStats?) {
+                }
 
-            override fun onError(e: Exception?) {
-            }
-        })
+                override fun onError(e: Exception?) {
+                }
+            })
+
+        lifecycleScope.launch {
+
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mainScope.cancel()
+    }
+
+    fun onClick(view: android.view.View) {
+        when (view.id) {
+            R.id.btn_coroutine_httpdns_test -> {
+                val ret = HttpDnsManager.getIpByHostAsync("www.aliyun.com")
+                LogUtils.d(ret)
+            }
+        }
     }
 }

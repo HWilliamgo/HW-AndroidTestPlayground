@@ -5,6 +5,7 @@ import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 /**
  * date: 2020/7/18
@@ -27,7 +28,10 @@ interface GithubApi {
      * Kt协程 + Retrofit
      */
     @GET("users/{user}/repos")
-    suspend fun listReposKt(@Path("user") user: String): List<GithubUserReposVO>
+    suspend fun listReposKt(
+        @Path("user") user: String,
+        @Query("uid") uid: String
+    ): List<GithubUserReposVO>
 
     /**
      * RxJava + Retrofit

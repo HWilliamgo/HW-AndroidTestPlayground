@@ -26,12 +26,6 @@
             android:onClick="onClick"
             android:text="测试SNI方案" />
 
-        <WebView
-            android:background="@color/colorPrimaryDark"
-            android:id="@+id/wb_test_sni"
-            android:layout_width="match_parent"
-            android:layout_height="800dp" />
-
         <TextView
             android:id="@+id/tv_test_sni"
             android:layout_width="wrap_content"
