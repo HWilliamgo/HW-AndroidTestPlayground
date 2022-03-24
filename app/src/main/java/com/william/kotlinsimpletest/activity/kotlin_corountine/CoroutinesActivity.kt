@@ -8,8 +8,12 @@ import com.stealthcopter.networktools.Ping
 import com.stealthcopter.networktools.ping.PingResult
 import com.stealthcopter.networktools.ping.PingStats
 import com.william.kotlinsimpletest.R
+import com.william.kotlinsimpletest.net.APIManager
 import com.william.kotlinsimpletest.net.HttpDnsManager
 import kotlinx.coroutines.*
+import okhttp3.CacheControl
+import okhttp3.Request
+import java.util.concurrent.TimeUnit
 
 class CoroutinesActivity : AppCompatActivity() {
 
@@ -25,36 +29,36 @@ class CoroutinesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)
 
-//        mainScope.launch {
-//            val cacheControl = CacheControl.Builder()
-//                .maxAge(60, TimeUnit.SECONDS)
-//                .build()
-//            val requst = Request.Builder()
-//                .url("https://juejin.im/android")
-////                .cacheControl(cacheControl)
-//                .get()
-//                .build()
-//            val response = withContext(Dispatchers.IO) {
-//                APIManager.getOkHttpClient().newCall(requst).execute()
+        mainScope.launch {
+            val cacheControl = CacheControl.Builder()
+                .maxAge(60, TimeUnit.SECONDS)
+                .build()
+            val requst = Request.Builder()
+                .url("https://juejin.im/android")
+//                .cacheControl(cacheControl)
+                .get()
+                .build()
+            val response = withContext(Dispatchers.IO) {
+                APIManager.getOkHttpClient().newCall(requst).execute()
+            }
+//            withContext(Dispatchers.IO) {
+//                val responseString = response.body()?.string()
+//                LogUtils.d(responseString)
 //            }
-////            withContext(Dispatchers.IO) {
-////                val responseString = response.body()?.string()
-////                LogUtils.d(responseString)
-////            }
-//            val cacheResponse = response.cacheResponse
-//            val networkResponse = response.networkResponse
-//
-//            cacheResponse?.also {
-//                withContext(Dispatchers.IO) {
-//                    LogUtils.d(it)
-//                }
-//            }
-//            networkResponse?.also {z
-//                withContext(Dispatchers.IO) {
-//                    LogUtils.d(it)
-//                }
-//            }
-//        }
+            val cacheResponse = response.cacheResponse
+            val networkResponse = response.networkResponse
+
+            cacheResponse?.also {
+                withContext(Dispatchers.IO) {
+                    LogUtils.d(it)
+                }
+            }
+            networkResponse?.also {
+                withContext(Dispatchers.IO) {
+                    LogUtils.d(it)
+                }
+            }
+        }
         Ping.onAddress("oss-live-2.videocc.net").setTimes(0).setDelayMillis(1000)
             .doPing(object : Ping.PingListener {
                 override fun onResult(pingResult: PingResult?) {
@@ -71,6 +75,10 @@ class CoroutinesActivity : AppCompatActivity() {
         lifecycleScope.launch {
 
         }
+
+    }
+
+    private suspend fun a(){
     }
 
     override fun onDestroy() {

@@ -1,1 +1,2 @@
 include ':app', ':customPlugin'
+include ':EmptyLibTest'

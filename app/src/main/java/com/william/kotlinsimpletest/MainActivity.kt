@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ToastUtils
+import com.william.kotlinsimpletest.activity.EmptyModuleActivity
 import com.william.kotlinsimpletest.activity.ProgressBarActivity
 import com.william.kotlinsimpletest.activity.braodcast.ConnectivityTestActivity
 import com.william.kotlinsimpletest.activity.file.FileTestActivity
@@ -15,6 +16,7 @@ import com.william.kotlinsimpletest.activity.https_sni.HttpsSniActivity
 import com.william.kotlinsimpletest.activity.jniTest.JniTestActivity
 import com.william.kotlinsimpletest.activity.kotlin_corountine.CoroutinesActivity
 import com.william.kotlinsimpletest.activity.lockScreen.FiredLockScreenActivity
+import com.william.kotlinsimpletest.activity.plv_test.MultiCameraTestActivity
 import com.william.kotlinsimpletest.activity.rv_test.RvTestActivity
 import com.william.kotlinsimpletest.activity.rxJava.RxJavaTestActivity
 import com.william.kotlinsimpletest.activity.stack_test.StackTestActivity
@@ -105,6 +107,12 @@ class MainActivity : AppCompatActivity() {
         when (view.id) {
             R.id.btn_jump_to_https_sni -> {
                 startActivity(Intent(this, HttpsSniActivity::class.java))
+            }
+            R.id.btn_jumpt_to_plv_test -> {
+                startActivity(Intent(this, MultiCameraTestActivity::class.java))
+            }
+            R.id.btn_jump_to_empty_module -> {
+                startActivity(Intent(this, EmptyModuleActivity::class.java))
             }
         }
     }

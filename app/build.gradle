@@ -1,19 +1,30 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+
+Properties properties = new Properties()
+if (project.rootProject.file('local.properties').canRead()) {
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+}
+def appSecret = properties.getProperty("APP_SECRET")
+def appID = properties.getProperty("APP_ID")
+def userID = properties.getProperty("USER_ID")
+
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.william.kotlinsimpletest"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        buildConfigField("String", "APP_SECRET", appSecret)
+        buildConfigField("String", "APP_ID", appID)
+        buildConfigField("String", "USER_ID", userID)
     }
     buildTypes {
         release {
@@ -46,6 +57,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation files('libs/EmptyLibTest-debug.aar')
 
     //kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -109,6 +121,7 @@ dependencies {
     implementation 'com.aliyun.ams:alicloud-android-httpdns:2.0.2'
 
     implementation 'com.aliyun.ams:alicloud-android-httpdns:2.0.2'
+    api 'net.polyv.android:polyvSDKLiveScenes:1.7.1'
 
 }
 
